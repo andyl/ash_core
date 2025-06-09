@@ -3,12 +3,12 @@ defmodule Mix.Tasks.AshCore.Install.Docs do
 
   @spec short_doc() :: String.t()
   def short_doc do
-    "A short description of your task"
+    "Install AshCore"
   end
 
   @spec example() :: String.t()
   def example do
-    "mix ash_core.install --example arg"
+    "mix ash_core.install"
   end
 
   @spec long_doc() :: String.t()
@@ -16,7 +16,9 @@ defmodule Mix.Tasks.AshCore.Install.Docs do
     """
     #{short_doc()}
 
-    Longer explanation of your task
+    Install `ash_core` into your Phoenix app.
+
+    Requires ash
 
     ## Example
 
