@@ -61,7 +61,7 @@ if Code.ensure_loaded?(Igniter) do
         positional: [],
         # Other tasks your task composes using `Igniter.compose_task`, passing in the CLI argv
         # This ensures your option schema includes options from nested tasks
-        composes: [],
+        composes: ["ash_core.gen.plug"],
         # `OptionParser` schema
         schema: [],
         # Default values for the options in the `schema`
@@ -75,11 +75,8 @@ if Code.ensure_loaded?(Igniter) do
 
     @impl Igniter.Mix.Task
     def igniter(igniter) do
-      div = "---------------------------------------"
-      IO.puts(div)
-      IO.puts("Init for AshCore")
-      IO.puts(div)
       igniter
+      |> Igniter.compose_task("ash_core.gen.plug")
     end
   end
 else
